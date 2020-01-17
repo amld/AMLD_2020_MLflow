@@ -5,6 +5,6 @@ entry_points:
     parameters:
       penalty: {type: string, default: "l2" }
       run_origin: {type: string, default: "None" }
-    command: "python 330_keras_reuters_mlp.py
+    command: "python train.py
                 --penalty {penalty}
                 --run_origin {run_origin}"

@@ -30,7 +30,7 @@ entry_points:
         default: ""
     # definition of command being executed when calling the entry point
     # to-be-called .py or .sh file needs to be present in folder
-    command: "python 330_keras_reuters_mlp.py -p {par} --another_par {another_par} {data_file}"
+    command: "python train.py -p {par} --another_par {another_par} {data_file}"
   test:
     parameters:
       data_file: path

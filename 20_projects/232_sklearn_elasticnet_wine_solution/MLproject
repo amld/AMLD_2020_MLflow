@@ -6,7 +6,7 @@ entry_points:
       alpha: {type: float, default: 0.5}
       l1_ratio: {type: float, default: 0.1}
       run_origin: {type: string, default: "None" }
-    command: "python 330_keras_reuters_mlp.py
+    command: "python train.py
                 --alpha {alpha}
                 --l1_ratio {l1_ratio}
                 --run_origin {run_origin}"
