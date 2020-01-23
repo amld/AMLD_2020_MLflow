@@ -4,7 +4,7 @@ Developing adequate machine learning models involves a lot of experimentation wh
 In this workshop, we will introduce MLflow and show how you can integrate this model management framework into the ML lifecycle, from tracking experiments to eventually deploying models.
 
 ## Prerequisites
-* To run code and set up environments: Python 3
+* To run code and set up environments: Python 3 (We encountered problems with Python 3.8 and recommend using Python 3.6 or 3.7 instead.)
 * To run MLflow Projects and MLflow Models:
   * Get conda >= 4.6
   * Additionally, configure CLI to activate conda environments. To do so, type `conda init <CLI>` in
@@ -22,15 +22,22 @@ Windows
 ```bash
 python -m venv mlflow_server
 mlflow_server\Scripts\activate
-pip install mlflow
+pip install mlflow==1.5.0
 deactivate
 ```
-Linux
+Linux, Mac
 ```bash
 python -m venv mlflow_server
 . mlflow_server/bin/activate
-pip install mlflow
+pip install mlflow==1.5.0
 deactivate
+```
+***Alternatively***, you can create `conda` environments like so:
+```bash
+conda create -n mlflow_server python=3.7
+conda activate mlflow_server
+pip install mlflow==1.5.0
+conda deactivate
 ```
 
 ### Virtual environment with required packages for workshop 
@@ -38,23 +45,31 @@ Windows
 ```bash
 python -m venv mlflow_sklearn
 mlflow_sklearn\Scripts\activate
-pip install mlflow sklearn matplotlib jupyter
+pip install mlflow==1.5.0 sklearn matplotlib jupyter
 python -m ipykernel install --user --name mlflow_sklearn --display-name "Python (MLflow sklearn)"
 deactivate
 ```
-Linux
+Linux, Mac
 ```bash
 python -m venv mlflow_sklearn
 . mlflow_sklearn/bin/activate
-pip install mlflow sklearn matplotlib jupyter
+pip install mlflow==1.5.0 sklearn matplotlib jupyter
 python -m ipykernel install --user --name mlflow_sklearn --display-name "Python (MLflow sklearn)"
 deactivate
 ```
+***Alternatively***, with `conda`:
+```bash
+conda create -n mlflow_sklearn python=3.7
+conda activate mlflow_sklearn
+pip install mlflow==1.5.0 sklearn matplotlib jupyter
+python -m ipykernel install --user --name mlflow_sklearn --display-name "Python (MLflow sklearn)"
+conda deactivate
+```
 
 ## Disclaimer
-Most of the documentation in this Git Repository is directly taken from [MLlfow's website](https://www.mlflow.org/docs/latest/index.html). It is condensed to explain the functionalities that I think are most important to be discussed in an introductory workshop. For more information and a deeper insight, please directly consult MLflow's documentation.
-
 At the time of writing, the latest version was v1.5.0, which was used to prepare and conduct this workshop.
+
+Most of the documentation in this Git Repository is directly taken from [MLlfow's website](https://www.mlflow.org/docs/latest/index.html). It is condensed to explain the functionalities that I think are most important to be discussed in an introductory workshop. For more information and a deeper insight, please directly consult MLflow's documentation.
 
 ## Overview on MLflow
 MLflow is an open source platform for managing the end-to-end machine learning lifecycle. It tackles three primary functions:
@@ -66,4 +81,4 @@ MLflow is an open source platform for managing the end-to-end machine learning l
 
 MLflow is library-agnostic. It can be used with any machine learning library, and in any programming language, since all functions are accessible through a REST API and CLI. For convenience, the project also includes a Python API, R API, and Java API. Here, we only concentrate on the Python API.
 
-In this workshop, we will discuss MLflow's three components: [MLflow Tracking](./10_tracking/tracking.md), [MLflow Projects](./20_projects/projects.md), and [MLflow Models](./30_models/models.md).
+In this workshop, we will discuss MLflow's three components: [MLflow Tracking](10_tracking/README.md), [MLflow Projects](20_projects/README.md), and [MLflow Models](30_models/README.md).

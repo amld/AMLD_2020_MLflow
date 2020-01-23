@@ -133,6 +133,12 @@ Linux
 . mlflow_sklearn/bin/activate
 jupyter notebook
 ```
+`conda`
+```bash
+conda activate mlflow_sklearn
+jupyter notebook
+```
+
 The Jupyter UI should open in a browser automatically, if not, follow the instructions in the CLI.
 
 Once the UI shows up, navigate to the `10_tracking` folder and open the Jupyter Notebook you want to
