@@ -130,10 +130,12 @@ The REST API server accepts the following data formats as POST input to the `/in
 Example requests:
 ```bash
 # split-oriented
-curl http://127.0.0.1:5000/invocations -H 'Content-Type: application/json' -d '{
+curl http://localhost:<PORT>/invocations \
+    -H 'Content-Type: application/json; format=pandas-split' \
+    -d '{
     "columns": ["a", "b", "c"],
     "data": [[1, 2, 3], [4, 5, 6]]
-}'
+    }'
 ```
 
 ## Tasks

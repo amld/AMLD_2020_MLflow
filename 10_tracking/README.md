@@ -8,12 +8,20 @@ At first, the [setup](#setup) will be discussed. Then, a short [overview](#overv
 Windows
 ```bash
 mlflow_server\Scripts\activate
-mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri file:///%cd%\mlruns --default-artifact-root file:/%cd%\mlruns
+mlflow server \
+    --host 0.0.0.0 \
+    --port 5000 \
+    --backend-store-uri file:///%cd%\mlruns \
+    --default-artifact-root file:/%cd%\mlruns
 ```
 Linux
 ```bash
 . mlflow_server/bin/activate
-mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri file:///$pwd/mlruns --default-artifact-root file:/$pwd/mlruns
+mlflow server \
+    --host 0.0.0.0 \
+    --port 5000 \
+    --backend-store-uri file:///$pwd/mlruns \
+    --default-artifact-root file:/$pwd/mlruns
 ```
 The MLflow server is now running on <http://localhost:5000>. This value needs to be assigned to the
 environment variable `MLFLOW_TRACKING_URI`, i.e., `set MLFLOW_TRACKING_URI=http://localhost:5000` on Windows
